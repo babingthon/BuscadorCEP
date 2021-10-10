@@ -1,9 +1,12 @@
-
-async function buscarCep(e) {
-
-
+async function buscarCep() {
 
   let cep = document.getElementById('cep').value;
+
+  if (cep == '') {
+    alert('Preencha o campo do CEP.');
+  }
+
+
   let req = `https://viacep.com.br/ws/${cep}/json/`  
   let resp = await fetch(req);
   let result = await resp.json();
